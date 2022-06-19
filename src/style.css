@@ -1,0 +1,82 @@
+body {
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(sunnyroad.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-control {
+    background: #dee3e2;
+    margin-top: 15px;
+}
+
+.btn {
+    margin-top: 15px;
+    color: #9fd3c7;
+}
+
+.card {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+    color: #385170;
+    font-weight: 500;
+    text-align: center;
+}
+
+.forecast {
+    color: #385170;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #9fd3c7;
+    border-radius: 10px;
+}
+
+.low-high {
+    color: #9fd3c7;
+    font-weight: 300;
+}
+
+.fa-solid {
+    color: #de7119;
+    font-size: 36px;
+}
+
+.text-responsive {
+    font-size: calc(30% + 1vw + 1vh);
+}
+
+.actual-date {
+    font-size: 22px;
+}
+
+.units {
+    vertical-align: super;
+    font-size: 12px;
+}
+
+#conditions {
+    font-size: 22px;
+}
+
+#current-location-button {
+    font-size: 14px;
+}
