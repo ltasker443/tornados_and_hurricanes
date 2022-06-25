@@ -37,6 +37,7 @@ ul {
     color: #385170;
     font-weight: 500;
     text-align: center;
+    background-color: #dee3e2;
 }
 
 .forecast {
@@ -48,10 +49,11 @@ ul {
     padding: 10px;
     border: 1px solid #9fd3c7;
     border-radius: 10px;
+    background-color: #dee3e2;
 }
 
 .low-high {
-    color: #9fd3c7;
+    color: #385170;
     font-weight: 300;
 }
 

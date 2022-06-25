@@ -43,6 +43,8 @@ function currentlyIs(date) {
         let newTime = `${currentHour}:${currentMinute}`;
         return newTime;
     }
+
+    
     
 let rightNowDate = document.querySelector(".current-date");
       rightNowDate.innerHTML = currentlyIs(todayIs);
@@ -76,6 +78,10 @@ let rightNowDate = document.querySelector(".current-date");
         let wind = Math.round(response.data.wind.speed);
         let cityWind=document.querySelector("#wind");
         cityWind.innerHTML=`Wind Speed: ${wind}mph`;
+
+        let sunrise=(response.data.sys.sunrise);
+        let citySunrise=document.querySelector("#sunrise");
+        citySunrise.innerHTML=`Sunrise: ${sunrise}`;
       
         let condition = (response.data.weather[0].main);
         let cityCondition=document.querySelector("#condition-description");
