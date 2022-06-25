@@ -31,6 +31,14 @@ function currentlyIs(date) {
         return newDate;
       }
 
+      function formatTime(timestamp){
+      let time= new Date(timestamp);
+      let hour= time.getHours();
+      let minute=time.getMinutes();
+      let newTime= `${hour}:${minute}`;
+      return newTime;
+      }
+
     function timeCurrent(time) {
         let currentHour = todayIs.getHours();
         if (currentHour < 10) {
@@ -43,14 +51,10 @@ function currentlyIs(date) {
         let newTime = `${currentHour}:${currentMinute}`;
         return newTime;
     }
-
-    
-    
-let rightNowDate = document.querySelector(".current-date");
-      rightNowDate.innerHTML = currentlyIs(todayIs);
+      let rightNowDate = document.querySelector(".current-date");
+        rightNowDate.innerHTML = currentlyIs(todayIs);
       let rightNowTime = document.querySelector(".current-time");
-      rightNowTime.innerHTML= timeCurrent(todayIs);
-
+        rightNowTime.innerHTML= timeCurrent(todayIs);
 
       function currentConditions(response) {
         document.querySelector("#city").innerHTML=response.data.name;
@@ -62,7 +66,7 @@ let rightNowDate = document.querySelector(".current-date");
         let minimum = Math.round(response.data.main.temp_min);
         let cityMinTemp=document.querySelector("#low-temp");
         cityMinTemp.innerHTML=`${minimum}º`;
-      
+
         let maximum=Math.round(response.data.main.temp_max);
         let cityMaxTemp=document.querySelector("#hi-temp");
         cityMaxTemp.innerHTML=`${maximum}º`;
@@ -87,6 +91,9 @@ let rightNowDate = document.querySelector(".current-date");
         let cityCondition=document.querySelector("#condition-description");
         cityCondition.innerHTML=`${condition}`;
         console.log(response);
+
+        let cityTime=document.querySelector("#city-time");
+        cityTime.innerHTML=formatTime(response.data.dt * 1000);
       }
 
       function searchCity(city) {
