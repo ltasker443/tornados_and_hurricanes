@@ -38,7 +38,7 @@ function currentlyIs(date) {
       let newTime= `${hour}:${minute}`;
       return newTime;
       }
-
+      
     function timeCurrent(time) {
         let currentHour = todayIs.getHours();
         if (currentHour < 10) {
@@ -92,8 +92,16 @@ function currentlyIs(date) {
         cityCondition.innerHTML=`${condition}`;
         console.log(response);
 
-        let cityTime=document.querySelector("#city-time");
-        cityTime.innerHTML=formatTime(response.data.dt * 1000);
+        let refreshTime=document.querySelector("#city-time");
+        refreshTime.innerHTML=formatTime(response.data.dt * 1000);
+
+        let conditionIcon=document.querySelector("#condition-icon");
+        conditionIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
+
+
+        let cityTimezone=document.querySelector("#city-timezone");
+        cityTimezone.innerHTML=(response.data.sys.timezone);
+        ///?????
       }
 
       function searchCity(city) {
