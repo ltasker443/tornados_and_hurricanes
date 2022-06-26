@@ -80,7 +80,7 @@ function currentlyIs(date) {
         let conditionIcon=document.querySelector("#condition-icon");
         conditionIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
 
-        farenheitTemperature=response.data.main.temp;
+        fahrenheitTemperature=response.data.main.temp;
         }
 
       function searchCity(city) {
@@ -109,12 +109,18 @@ function currentlyIs(date) {
       function displayCelcius(event){
         event.preventDefault();
         let temperature = document.querySelector("#current-temp");
-        let celciusTemperature = (((farenheitTemperature - 32) * 5)/9);
+        let celciusTemperature = (((fahrenheitTemperature - 32) * 5) /9);
         temperature.innerHTML=Math.round(celciusTemperature);
-       
       }
 
-      let farenheitTemperature = null;
+      function displayFahrenheit(event) {
+      event.preventDefault();  
+      let temperature = document.querySelector("#current-temp");
+      temperature.innerHTML = Math.round(fahrenheitTemperature);
+      }
+      
+
+      let fahrenheitTemperature = null;
 
       let form = document.querySelector("#city-search-form");
       form.addEventListener("submit", handleSearch);
@@ -126,6 +132,9 @@ function currentlyIs(date) {
 
       let celciusLink=document.querySelector("#celcius");
       celciusLink.addEventListener("click", displayCelcius);
+
+      let fahrenheitLink=document.querySelector("#fahrenheit");
+      fahrenheitLink.addEventListener("click", displayFahrenheit);
 
       searchCity("Las Vegas");
 
