@@ -30,33 +30,18 @@ function currentlyIs(date) {
         let newDate = `${dayToday} ${thisMonth} ${currentDate}`;
         return newDate;
       }
+      let rightNowDate = document.querySelector("#current-date");
+        rightNowDate.innerHTML = currentlyIs(todayIs);
 
       function formatTime(timestamp){
       let time= new Date(timestamp);
       let hour= time.getHours();
       let minute=time.getMinutes();
-      let newTime= `${hour}:${minute}`;
+      let newTime= `Last refreshed: ${hour}:${minute}`;
       return newTime;
       }
-      
-    function timeCurrent(time) {
-        let currentHour = todayIs.getHours();
-        if (currentHour < 10) {
-          currentHour = (`0${currentHour}`);
-        }
-        let currentMinute = todayIs.getMinutes();
-        if (currentMinute < 10) {
-          currentMinute = (`0${currentMinute}`);
-        }
-        let newTime = `${currentHour}:${currentMinute}`;
-        return newTime;
-    }
-      let rightNowDate = document.querySelector(".current-date");
-        rightNowDate.innerHTML = currentlyIs(todayIs);
-      let rightNowTime = document.querySelector(".current-time");
-        rightNowTime.innerHTML= timeCurrent(todayIs);
-
-      function currentConditions(response) {
+  
+        function currentConditions(response) {
         document.querySelector("#city").innerHTML=response.data.name;
 
         let temperature = Math.round(response.data.main.temp);
@@ -82,27 +67,18 @@ function currentlyIs(date) {
         let wind = Math.round(response.data.wind.speed);
         let cityWind=document.querySelector("#wind");
         cityWind.innerHTML=`Wind Speed: ${wind}mph`;
-
-        let sunrise=(response.data.sys.sunrise);
-        let citySunrise=document.querySelector("#sunrise");
-        citySunrise.innerHTML=`Sunrise: ${sunrise}`;
       
         let condition = (response.data.weather[0].main);
         let cityCondition=document.querySelector("#condition-description");
         cityCondition.innerHTML=`${condition}`;
         console.log(response);
 
-        let refreshTime=document.querySelector("#city-time");
+        let refreshTime=document.querySelector("#refresh-time");
         refreshTime.innerHTML=formatTime(response.data.dt * 1000);
 
         let conditionIcon=document.querySelector("#condition-icon");
         conditionIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
-
-
-        let cityTimezone=document.querySelector("#city-timezone");
-        cityTimezone.innerHTML=(response.data.sys.timezone);
-        ///?????
-      }
+        }
 
       function searchCity(city) {
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=294c897fc47f4b73d1c81e6766aacc85&units=imperial`;
@@ -138,12 +114,4 @@ function currentlyIs(date) {
       searchCity("Las Vegas");
 
       
-
-
-
-
-
-
-
-
 
