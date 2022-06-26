@@ -30,7 +30,8 @@ function currentlyIs(date) {
         let newDate = `${dayToday} ${thisMonth} ${currentDate}`;
         return newDate;
       }
-      let rightNowDate = document.querySelector("#current-date");
+      
+        let rightNowDate = document.querySelector("#current-date");
         rightNowDate.innerHTML = currentlyIs(todayIs);
 
       function formatTime(timestamp){
