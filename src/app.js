@@ -31,8 +31,6 @@ function currentlyIs(date) {
         return newDate;
       }
 
-        let rightNowDate = document.querySelector("#current-date");
-        rightNowDate.innerHTML = currentlyIs(todayIs);
 
       function formatTime(timestamp){
       let time= new Date(timestamp);
@@ -51,11 +49,11 @@ function currentlyIs(date) {
 
         let minimum = Math.round(response.data.main.temp_min);
         let cityMinTemp=document.querySelector("#low-temp");
-        cityMinTemp.innerHTML=`${minimum}º`;
+        cityMinTemp.innerHTML=`Lo: ${minimum}º`;
 
         let maximum=Math.round(response.data.main.temp_max);
         let cityMaxTemp=document.querySelector("#hi-temp");
-        cityMaxTemp.innerHTML=`${maximum}º`;
+        cityMaxTemp.innerHTML=`Hi: ${maximum}º`;
 
         let feelsLike = Math.round(response.data.main.feels_like);
         let cityFeelsLike=document.querySelector("#feels-like");
@@ -133,6 +131,9 @@ function currentlyIs(date) {
       
       let locationButton=document.querySelector("#current-location-button");
       locationButton.addEventListener("click", getLocation);
+
+      let rightNowDate = document.querySelector("#current-date");
+      rightNowDate.innerHTML = currentlyIs(todayIs);
 
       let celciusLink=document.querySelector("#celcius");
       celciusLink.addEventListener("click", displayCelcius);
