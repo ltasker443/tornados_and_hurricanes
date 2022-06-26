@@ -8,10 +8,6 @@ body {
     background-size: 100%;
 }
 
-h1 {
-    margin: 0;
-}
-
 ul {
     list-style-type: none;
     padding: 0;
@@ -62,14 +58,6 @@ ul {
     font-size: 36px;
 }
 
-.text-responsive {
-    font-size: calc(30% + 1vw + 1vh);
-}
-
-.actual-date {
-    font-size: 22px;
-}
-
 .units {
     vertical-align: super;
     font-size: 12px;
@@ -88,9 +76,6 @@ ul {
     font-size: 22px;
 }
 
-#current-date{
-    font-size: 22px;
-}
 
 #current-location-button {
     font-size: 14px;
