@@ -38,42 +38,29 @@
         <button type="button" class="btn btn-outline-secondary" type="submit" id="current-location-button">Current Location</button>
       </form>
 
-
-      <div class="row">
-        <div class="col-6">
-          <div class="card">
-            <div class="card-body weather">
-              <h1 class="city card-title" id="city"></h1>
-              <h2 class="card-title"> 
-                <img src="" id="condition-icon">
-                <span id="condition-description"></span>
-                <span id="current-temp"> </span> 
-                <span class=units><a href="#" id="fahrenheit" class="active"a>ºF</a> | <a href="#" id="celcius">ºC</a></span>
-              </h2>
-                <ul class="card-subtitle mb-2 text-muted" id="date">
-                <li id="current-date"></li>
-                <li id="refresh-time"></li>
-               </ul>
-            </div>
-          </div>
-        </div>
-
-          <div class="col-6">
-            <div class="card">
-              <div class="card-body">
-                <h1 class="city card-title">
-                <ul class="card-subtitle mb-2 text-muted" id="conditions">
+<div class="card">
+  <div class="card-body weather">
+    <div class="row forecast">
+         <span class="col-6">
+           <ul class="card-subtitle mb-2 text-muted" id="conditions">
+                  <li class="city card-title" id="city"> </li>
+                  <span id="current-temp"></span>
+                  <span class=units><a href="#" id="fahrenheit" class="active"a>ºF</a> | <a href="#" id="celcius">ºC</a></span>
+                  <img src="" id="condition-icon"><span id="condition-description"></span>
+                  <li id="current-date"></li>
+                  <li id="refresh-time"></li>
+                </ul>
+        </span>
+        <span class="col-6">
+           <ul class="card-subtitle mb-2 text-muted" id="conditions">
                   <li><span id="hi-temp"></span>/<span id="low-temp"></span></li>
                   <li id="feels-like"></li>
                   <li id="humidity"></li>
                   <li id="wind"></li>
-                  <li id="sunrise"></li>
-                  <li id="sunset"></li>
                 </ul>
-            </div>
-          </div>
-        </div>
-
+        </span>
+  </div>
+</div>
 
   <div class="row forecast">
          <span class="col-sm-2">14
