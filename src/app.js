@@ -30,7 +30,7 @@ function currentlyIs(date) {
         let newDate = `${dayToday} ${thisMonth} ${currentDate}`;
         return newDate;
       }
-      
+
         let rightNowDate = document.querySelector("#current-date");
         rightNowDate.innerHTML = currentlyIs(todayIs);
 
@@ -79,6 +79,8 @@ function currentlyIs(date) {
 
         let conditionIcon=document.querySelector("#condition-icon");
         conditionIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
+
+        farenheitTemperature=response.data.main.temp;
         }
 
       function searchCity(city) {
@@ -103,6 +105,16 @@ function currentlyIs(date) {
         event.preventDefault();
         navigator.geolocation.getCurrentPosition(searchLocation);
       }
+      
+      function displayCelcius(event){
+        event.preventDefault();
+        let temperature = document.querySelector("#current-temp");
+        let celciusTemperature = (((farenheitTemperature - 32) * 5)/9);
+        temperature.innerHTML=Math.round(celciusTemperature);
+       
+      }
+
+      let farenheitTemperature = null;
 
       let form = document.querySelector("#city-search-form");
       form.addEventListener("submit", handleSearch);
@@ -112,7 +124,12 @@ function currentlyIs(date) {
       let locationButton=document.querySelector("#current-location-button");
       locationButton.addEventListener("click", getLocation);
 
+      let celciusLink=document.querySelector("#celcius");
+      celciusLink.addEventListener("click", displayCelcius);
+
       searchCity("Las Vegas");
+
+      
 
       
 
