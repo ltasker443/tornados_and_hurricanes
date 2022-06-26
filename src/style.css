@@ -75,6 +75,15 @@ ul {
     font-size: 12px;
 }
 
+.weather .active {
+    color:#385170;
+    cursor: default;
+    text-decoration: none;
+}
+.weather .active:hover {
+    text-decoration: none;
+}
+
 #conditions {
     font-size: 22px;
 }
@@ -86,6 +95,7 @@ ul {
 #current-location-button {
     font-size: 14px;
 }
+
 #github-link {
     color: #dee3e2;
 }

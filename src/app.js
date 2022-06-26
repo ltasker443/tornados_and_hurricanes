@@ -47,7 +47,7 @@ function currentlyIs(date) {
 
         let temperature = Math.round(response.data.main.temp);
         let cityTemperature=document.querySelector("#current-temp");
-        cityTemperature.innerHTML=`${temperature}º`;
+        cityTemperature.innerHTML=`${temperature}`;
 
         let minimum = Math.round(response.data.main.temp_min);
         let cityMinTemp=document.querySelector("#low-temp");
@@ -109,12 +109,16 @@ function currentlyIs(date) {
       function displayCelcius(event){
         event.preventDefault();
         let temperature = document.querySelector("#current-temp");
+        fahrenheitLink.classList.remove("active");
+        celciusLink.classList.add("active");
         let celciusTemperature = (((fahrenheitTemperature - 32) * 5) /9);
         temperature.innerHTML=Math.round(celciusTemperature);
       }
 
       function displayFahrenheit(event) {
       event.preventDefault();  
+      celciusLink.classList.remove("active");
+      fahrenheitLink.classList.add("active");
       let temperature = document.querySelector("#current-temp");
       temperature.innerHTML = Math.round(fahrenheitTemperature);
       }
