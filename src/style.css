@@ -1,10 +1,8 @@
 body {
-    
     display: block;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     background-color: #385170;
-    
 }
 
 ul {
@@ -14,7 +12,7 @@ ul {
 }
 
 .card {
-    border: 4px solid #9fd3c7;
+    border: 3px solid #9fd3c7;
     border-radius: 10px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -35,6 +33,7 @@ ul {
 .btn {
     margin-top: 15px;
     color: #9fd3c7;
+    border: 1px solid #9fd3c7;
 }
 
 .forecast {
@@ -75,18 +74,25 @@ ul {
 }
 
 #city {
-    font-size: 33px;
+    font-size: 36px;
 }
 #conditions {
     font-size: 22px;
 }
-
+#city-search-input {
+    border: 3px solid #9fd3c7;
+}
+#current-date {
+    font-size: 30px;
+}
 #current-location-button {
     font-size: 14px;
 }
-
+#refresh-time {
+    font-size: 16px;
+}
 #github-link {
     color: #9fd3c7;
     text-align: left;
-    padding-left: 3px;
+    padding-left: 4px;
 }
