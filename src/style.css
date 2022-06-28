@@ -77,7 +77,13 @@ ul {
     font-size: 36px;
 }
 #conditions {
-    font-size: 22px;
+    font-size: 20px;
+}
+#condition-description {
+    font-size: 28px;
+}
+#current-temp {
+    font-size: 28px;
 }
 #city-search-input {
     border: 3px solid #9fd3c7;
