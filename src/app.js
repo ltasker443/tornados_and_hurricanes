@@ -31,11 +31,16 @@ function currentlyIs(date) {
         return newDate;
       }
 
-
       function formatTime(timestamp){
       let time= new Date(timestamp);
-      let hour= time.getHours();
+      let hour= time.getHours(); 
+      if (hour < 10) {
+        hour = `0${hour}`;
+      }
       let minute=time.getMinutes();
+      if (minute <10) {
+        minute = `0${minute}`;
+      }
       let newTime= `Last refreshed: ${hour}:${minute}`;
       return newTime;
       }
