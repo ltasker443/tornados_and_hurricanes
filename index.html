@@ -12,96 +12,129 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-<script src="https://kit.fontawesome.com/4d9b8df8f1.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4d9b8df8f1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="src/style.css" />
-    
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    
-<div class="container">
+    <div class="container">
       <form class="d-flex" role="search" id="city-search-form">
         <input
           class="form-control me-2"
           type="search"
-          autofocus = "on"
+          autofocus="on"
           autocomplete="off"
           placeholder="City"
-          id = "city-search-input"
+          id="city-search-input"
         />
-        <button type="button" class="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
-        <button type="button" class="btn btn-outline-secondary" type="submit" id="current-location-button">Current Location</button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          type="submit"
+          id="search-button"
+        >
+          Search
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          type="submit"
+          id="current-location-button"
+        >
+          Current Location
+        </button>
       </form>
 
-  <div class="card">
+      <div class="card">
     <div class="card-body weather">
       <div class="row">
-         <span class="col-6">
-           <ul class="card-subtitle mb-2 text-muted" id="conditions">
-                  <li class="city card-title" id="city"></li>
-                  <li><img src="" id="condition-icon">
-                    <span id="condition-description"></span>
-                    <span id="current-temp"></span>
-                    <span class=units><a href="#" id="fahrenheit" class="active"a>ºF</a> | <a href="#" id="celcius">ºC</a></span>
-                 </li>
-                  <li id="current-date"></li>
-                  <li id="refresh-time"></li>
-                </ul>
+        <span class="col-6">
+          <ul class="card-subtitle mb-2 text-muted" id="conditions">
+            <li class="city card-title" id="city"></li>
+            <li>
+              <img src="" id="condition-icon" />
+              <span id="condition-description"></span>
+              <span id="current-temp"></span>
+              <span class="units"
+                ><a href="#" id="fahrenheit" class="active" a>ºF</a> |
+                <a href="#" id="celcius">ºC</a></span
+              >
+            </li>
+            <li id="current-date"></li>
+            <li id="refresh-time"></li>
+          </ul>
         </span>
         <span class="col-6">
-           <ul class="card-subtitle mb-2 text-muted" id="conditions">
-                  <li><span id="hi-temp"></span>/<span id="low-temp"></span></li>
-                  <li id="feels-like"></li>
-                  <li id="humidity"></li>
-                  <li id="wind"></li>
-                </ul>
+          <ul class="card-subtitle mb-2 text-muted" id="conditions">
+            <li><span id="hi-temp"></span>/<span id="low-temp"></span></li>
+            <li id="feels-like"></li>
+            <li id="humidity"></li>
+            <li id="wind"></li>
+          </ul>
         </span>
-  </div>
+      </div>
 
-
-  <div class="row forecast">
-         <span class="col-sm-2">14
-           <div>Sat</div>
-           <i class="fa-solid fa-cloud-sun"></i>
+      <div class="row forecast">
+        <span class="col-sm-2"
+          >14
+          <div>Sat</div>
+          <i class="fa-solid fa-cloud-sun"></i>
           <div class="low-high">71º/89º</div>
-        </span> 
-        <span class="col-sm-2">15
+        </span>
+        <span class="col-sm-2"
+          >15
           <div>Sun</div>
           <i class="fa-solid fa-cloud-sun"></i>
           <div class="low-high">67º/90º</div>
         </span>
-          <span class="col-sm-2">16
-            <div>Mon</div>
+        <span class="col-sm-2"
+          >16
+          <div>Mon</div>
           <i class="fa-solid fa-sun"></i>
           <div class="low-high">68º/93º</div>
         </span>
-          <span class="col-sm-2">17
-            <div>Tue</div>
-            <i class="fa-solid fa-cloud-sun"></i>
-            <div class="low-high">72º/97º</div>
+        <span class="col-sm-2"
+          >17
+          <div>Tue</div>
+          <i class="fa-solid fa-cloud-sun"></i>
+          <div class="low-high">72º/97º</div>
         </span>
-          <span class="col-sm-2">18
-            <div>Wed</div>
-            <i class="fa-solid fa-sun"></i>
-            <div class="low-high">74º/99º</div>
+        <span class="col-sm-2"
+          >18
+          <div>Wed</div>
+          <i class="fa-solid fa-sun"></i>
+          <div class="low-high">74º/99º</div>
         </span>
-          <span class="col-sm-2">19 
-            <div>Thu</div>
+        <span class="col-sm-2"
+          >19
+          <div>Thu</div>
           <i class="fa-solid fa-sun"></i>
           <div class="low-high">78º/102º</div>
         </span>
+      </div>
     </div>
-    </div>
+
     <p id="github-link">
-    <a href="https://github.com/ltasker443/tornados_and_hurricanes" target=blank id="github-link">Open-source</a> by Laura Tasker</p>
+      <a
+        href="https://github.com/ltasker443/tornados_and_hurricanes"
+        target="blank"
+        id="github-link"
+        >Open-source</a
+      >
+      by Laura Tasker
+    </p>
 
-    <script src= "src/app.js">
-
-    </script>
+    <script src="src/app.js"></script>
   </body>
 </html>
