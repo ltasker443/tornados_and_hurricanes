@@ -76,7 +76,6 @@ function currentlyIs(date) {
         let condition = (response.data.weather[0].main);
         let cityCondition=document.querySelector("#condition-description");
         cityCondition.innerHTML=`${condition}`;
-        console.log(response);
 
         let refreshTime=document.querySelector("#refresh-time");
         refreshTime.innerHTML=formatTime(response.data.dt * 1000);
@@ -130,12 +129,10 @@ function currentlyIs(date) {
       function changeBackground() {
         let time = new Date();
         let hours = time.getHours();
-        if (hours >= 5 || hours < 19) {
-          document.body.style.backgroundColor = "#e3e2c3"; //tan
+        if (hours >= 5 || hours < 20) {
+          document.body.style.backgroundColor = "#e3e2c3";
         }
         }
-changeBackground();
-    
 
       let fahrenheitTemperature = null;
 
@@ -157,6 +154,7 @@ changeBackground();
       fahrenheitLink.addEventListener("click", displayFahrenheit);
 
       searchCity("Las Vegas");
+      changeBackground();
 
       
 
