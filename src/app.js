@@ -44,6 +44,7 @@ function currentlyIs(date) {
       let newTime= `Last refreshed: ${hour}:${minute}`;
       return newTime;
       }
+
   
         function currentConditions(response) {
         document.querySelector("#city").innerHTML=response.data.name;
@@ -126,6 +127,15 @@ function currentlyIs(date) {
       temperature.innerHTML = Math.round(fahrenheitTemperature);
       }
       
+      function changeBackground() {
+        let time = new Date();
+        let hours = time.getHours();
+        if (hours > 18) {
+          document.body.style.backgroundColor = "#9fd3c7";
+        }
+        }
+changeBackground();
+    
 
       let fahrenheitTemperature = null;
 

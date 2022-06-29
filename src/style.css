@@ -1,8 +1,9 @@
 body {
+    background-color: #385170;
     display: block;
     margin: 0 auto;
+    max-width: 70%;
     font-family: 'Montserrat', sans-serif;
-    background-color: #385170;
 }
 
 ul {
@@ -80,13 +81,14 @@ ul {
     font-size: 20px;
 }
 #condition-description {
-    font-size: 28px;
+    font-size: 26px;
 }
 #current-temp {
     font-size: 28px;
 }
 #city-search-input {
     border: 3px solid #9fd3c7;
+    box-shadow: none;
 }
 #current-date {
     font-size: 30px;

@@ -27,6 +27,7 @@
 
     <link rel="stylesheet" href="src/style.css" />
   </head>
+  
   <body>
     <div class="container">
       <form class="d-flex" role="search" id="city-search-form">
@@ -59,7 +60,8 @@
       <div class="card">
     <div class="card-body weather">
       <div class="row">
-        <span class="col-6">
+        <span class = "col-sm-1"></span>
+        <span class="col-5">
           <ul class="card-subtitle mb-2 text-muted" id="conditions">
             <li class="city card-title" id="city"></li>
             <li>
@@ -68,22 +70,23 @@
               <span id="current-temp"></span>
               <span class="units"
                 ><a href="#" id="fahrenheit" class="active" a>ºF</a> |
-                <a href="#" id="celcius">ºC</a></span
-              >
+                <a href="#" id="celcius">ºC</a></span>
             </li>
             
             <li id="refresh-time"></li>
           </ul>
         </span>
-        <span class="col-6">
+        
+        <span class="col-5">
           <ul class="card-subtitle mb-2 text-muted" id="conditions">
             <li id="current-date"></li>
-            <li><span id="hi-temp"></span>/<span id="low-temp"></span></li>
+            <li><span id="hi-temp"></span>  <span id="low-temp"></span></li>
             <li id="feels-like"></li>
             <li id="humidity"></li>
             <li id="wind"></li>
           </ul>
         </span>
+        <span class = "col-sm-1"></span>
       </div>
 
       <div class="row forecast">
@@ -131,9 +134,7 @@
         href="https://github.com/ltasker443/tornados_and_hurricanes"
         target="blank"
         id="github-link"
-        >Open-source</a
-      >
-      by Laura Tasker
+        >Open-source</a> by Laura Tasker
     </p>
 
     <script src="src/app.js"></script>
