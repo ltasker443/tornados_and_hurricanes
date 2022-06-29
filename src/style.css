@@ -20,25 +20,25 @@ ul {
     max-width: 100%;
     max-height: 100%;
     text-align: center;
-    color: #385170;
-    background-color: #dee3e2;
+    background-color: #ececec;
     font-weight: 500;
     text-align: center;
 }
 
 .form-control {
-    background: #dee3e2;
-    margin-top: 15px;
+    background: #ececec;
+    margin-top: 20px;
 }
 
 .btn {
     margin-top: 15px;
-    color: #9fd3c7;
-    border: 1px solid #9fd3c7;
+    color: #385170;
+    border: 3px solid #9fd3c7;
+    font-weight: 400;
 }
 
 .forecast {
-    color: #385170;
+    color:#385170;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
@@ -48,12 +48,12 @@ ul {
 }
 
 .low-high {
-    color: #385170;
+    color: #545a5d;
     font-weight: 300;
 }
 
 .fa-solid {
-    color: #de7119;
+    color: #385170;
     font-size: 36px;
 }
 
@@ -75,10 +75,10 @@ ul {
 }
 
 #city {
-    font-size: 36px;
+    font-size: 34px;
 }
 #conditions {
-    font-size: 20px;
+    font-size: 18px;
 }
 #condition-description {
     font-size: 26px;
@@ -91,7 +91,7 @@ ul {
     box-shadow: none;
 }
 #current-date {
-    font-size: 30px;
+    font-size: 28px;
 }
 #current-location-button {
     font-size: 14px;
@@ -103,4 +103,5 @@ ul {
     color: #9fd3c7;
     text-align: left;
     padding-left: 4px;
+    font-size: 12px;
 }

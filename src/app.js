@@ -130,8 +130,8 @@ function currentlyIs(date) {
       function changeBackground() {
         let time = new Date();
         let hours = time.getHours();
-        if (hours > 18) {
-          document.body.style.backgroundColor = "#9fd3c7";
+        if (hours >= 5 || hours < 19) {
+          document.body.style.backgroundColor = "#e3e2c3"; //tan
         }
         }
 changeBackground();
