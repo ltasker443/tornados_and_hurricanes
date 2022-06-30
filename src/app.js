@@ -132,7 +132,7 @@ function currentlyIs(date) {
         let time = new Date();
         let hours = time.getHours();
         if (hours >= 5 && hours < 20) {
-          document.body.style.backgroundColor = "#e3e2c3";
+          document.body.style.backgroundColor = "#5dacbd";
         }
         }
 
