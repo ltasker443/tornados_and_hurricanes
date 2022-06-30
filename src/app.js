@@ -86,6 +86,8 @@ function currentlyIs(date) {
         fahrenheitTemperature=response.data.main.temp;
         }
 
+        
+
       function searchCity(city) {
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=294c897fc47f4b73d1c81e6766aacc85&units=imperial`;
         axios.get(`${apiUrl}`).then(currentConditions);
@@ -129,9 +131,30 @@ function currentlyIs(date) {
       function changeBackground() {
         let time = new Date();
         let hours = time.getHours();
-        if (hours >= 5 || hours < 20) {
+        if (hours >= 5 && hours < 20) {
           document.body.style.backgroundColor = "#e3e2c3";
         }
+        }
+
+        function displayForecast() {
+          let forecast = document.querySelector("#forecast");
+          let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+          
+          let forecastHTML = `<div class="row">`;
+          days.forEach(function (day) {
+            forecastHTML = forecastHTML + 
+           `<div class="col-2">
+           <div class = "forecast"> 14
+            <div>${day}</div>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <div class="low-high">71º/89º</div>
+            </div>
+            </span>
+        </div>`;
+         });
+           forecastHTML=forecastHTML + `</div>`;
+           forecast.innerHTML = forecastHTML;
+
         }
 
       let fahrenheitTemperature = null;
@@ -155,6 +178,7 @@ function currentlyIs(date) {
 
       searchCity("Las Vegas");
       changeBackground();
+      displayForecast();
 
       
 
