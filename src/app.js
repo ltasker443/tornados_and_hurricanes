@@ -63,11 +63,11 @@ function currentlyIs(date) {
 
         let minimum = Math.round(response.data.main.temp_min);
         let cityMinTemp=document.querySelector("#low-temp");
-        cityMinTemp.innerHTML=`Lo: ${minimum}º`;
+        cityMinTemp.innerHTML=`Night ${minimum}º`;
 
         let maximum=Math.round(response.data.main.temp_max);
         let cityMaxTemp=document.querySelector("#hi-temp");
-        cityMaxTemp.innerHTML=`Hi: ${maximum}º`;
+        cityMaxTemp.innerHTML=`Day ${maximum}º`;
 
         let feelsLike = Math.round(response.data.main.feels_like);
         let cityFeelsLike=document.querySelector("#feels-like");
@@ -147,18 +147,20 @@ function currentlyIs(date) {
         }
 
         function displayForecast(response) {
-          console.log(response.data.daily);
+          console.log(response.data)
+          let dailyForecast = response.data.daily;
           let forecast = document.querySelector("#forecast");
-          let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
           
           let forecastHTML = `<div class="row">`;
-          days.forEach(function (day) {
+          dailyForecast.forEach(function (forecastDay) {
             forecastHTML = forecastHTML + 
            `<div class="col-2">
            <div class = "forecast"> 14
-            <div>${day}</div>
+            <div>${forecastDay.dt}</div>
             <i class="fa-solid fa-cloud-sun"></i>
-            <div class="low-high">71º/89º</div>
+            <div class="low-high">
+            </div>
+            <span id="#min">${forecastDay.temp.min}</span> <span id="max"> ${forecastDay.temp.max} </span>
             </div>
             </span>
         </div>`;
