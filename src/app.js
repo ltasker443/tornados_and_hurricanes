@@ -46,7 +46,6 @@ function currentlyIs(date) {
       }
 
       function getForecast(coordinates){
-        console.log(coordinates);
         let apiKey = "294c897fc47f4b73d1c81e6766aacc85";
         let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
         console.log(apiUrl);
@@ -95,8 +94,6 @@ function currentlyIs(date) {
 
         getForecast(response.data.coord);
       }
-
-        
 
       function searchCity(city) {
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=294c897fc47f4b73d1c81e6766aacc85&units=imperial`;
@@ -150,6 +147,9 @@ function currentlyIs(date) {
           console.log(response.data)
           let dailyForecast = response.data.daily;
           let forecast = document.querySelector("#forecast");
+          let uvi = Math.round(response.data.current.uvi);
+          let uvIndex = document.querySelector("#uv-index");
+          
           
           let forecastHTML = `<div class="row">`;
           dailyForecast.forEach(function (forecastDay) {
@@ -157,7 +157,7 @@ function currentlyIs(date) {
            `<div class="col-2">
            <div class = "forecast"> 14
             <div>${forecastDay.dt}</div>
-            <i class="fa-solid fa-cloud-sun"></i>
+            <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png" />
             <div class="low-high">
             </div>
             <span id="#min">${forecastDay.temp.min}</span> <span id="max"> ${forecastDay.temp.max} </span>
@@ -167,7 +167,7 @@ function currentlyIs(date) {
          });
            forecastHTML=forecastHTML + `</div>`;
            forecast.innerHTML = forecastHTML;
-
+           uvIndex.innerHTML = `UV Index: ${uvi} of 10`;
         }
 
       let fahrenheitTemperature = null;

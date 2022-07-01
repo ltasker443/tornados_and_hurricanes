@@ -75,10 +75,10 @@ ul {
 }
 
 #city {
-    font-size: 34px;
+    font-size: 32px;
 }
 #conditions {
-    font-size: 18px;
+    font-size: 16px;
 }
 #condition-description {
     font-size: 26px;
@@ -91,17 +91,20 @@ ul {
     box-shadow: none;
 }
 #current-date {
-    font-size: 28px;
+    font-size: 26px;
 }
 #current-location-button {
     font-size: 14px;
 }
 #refresh-time {
+    font-size: 12px;
+}
+#uv-index {
     font-size: 16px;
 }
 #github-link {
     color: #e0ebeb;
     text-align: left;
     padding-left: 4px;
-    font-size: 12px;
+    font-size: 10px;
 }
