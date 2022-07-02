@@ -53,7 +53,7 @@ function currentlyIs(date) {
       }
 
   
-        function currentConditions(response) {
+      function currentConditions(response) {
         document.querySelector("#city").innerHTML=response.data.name;
 
         let temperature = Math.round(response.data.main.temp);
@@ -143,20 +143,27 @@ function currentlyIs(date) {
         }
         }
 
-        function displayForecast(response) {
+      function formatForecastDay(timestamp) {
+          let date = new Date (timestamp * 1000);
+          let day = date.getDay();
+          let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+          return days[day];
+        }
+
+      function displayForecast(response) {
           console.log(response.data)
           let dailyForecast = response.data.daily;
           let forecast = document.querySelector("#forecast");
           let uvi = Math.round(response.data.current.uvi);
           let uvIndex = document.querySelector("#uv-index");
           
-          
           let forecastHTML = `<div class="row">`;
           dailyForecast.forEach(function (forecastDay) {
             forecastHTML = forecastHTML + 
            `<div class="col-2">
            <div class = "forecast"> 14
-            <div>${forecastDay.dt}</div>
+            <div>${formatForecastDay(forecastDay.dt)}</div>
             <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png" />
             <div class="low-high">
             </div>
@@ -169,6 +176,8 @@ function currentlyIs(date) {
            forecast.innerHTML = forecastHTML;
            uvIndex.innerHTML = `UV Index: ${uvi} of 10`;
         }
+
+      
 
       let fahrenheitTemperature = null;
 
