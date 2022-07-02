@@ -48,7 +48,6 @@ function currentlyIs(date) {
       function getForecast(coordinates){
         let apiKey = "294c897fc47f4b73d1c81e6766aacc85";
         let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-        console.log(apiUrl);
         axios.get(apiUrl).then(displayForecast);
       }
 
@@ -159,25 +158,24 @@ function currentlyIs(date) {
           let uvIndex = document.querySelector("#uv-index");
           
           let forecastHTML = `<div class="row">`;
-          dailyForecast.forEach(function (forecastDay) {
-            forecastHTML = forecastHTML + 
-           `<div class="col-2">
-           <div class = "forecast"> 14
-            <div>${formatForecastDay(forecastDay.dt)}</div>
-            <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png" />
-            <div class="low-high">
-            </div>
-            <span id="#min">${forecastDay.temp.min}</span> <span id="max"> ${forecastDay.temp.max} </span>
-            </div>
-            </span>
-        </div>`;
-         });
+          dailyForecast.forEach(function (forecastDay, index) {
+            if (index > 0 && index < 7) {
+              forecastHTML = forecastHTML + 
+              `<div class="col-2">
+                  <div class = "forecast">
+                  <div>${formatForecastDay(forecastDay.dt)}</div>
+                  <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png" />
+                  <div class="low-high"></div>
+                  <span id="#min">${Math.round(forecastDay.temp.min)}º</span> <span id="max"> ${Math.round(forecastDay.temp.max)}º</span>
+                  </div>
+                  </span>
+              </div>`;
+            }
+          });
            forecastHTML=forecastHTML + `</div>`;
            forecast.innerHTML = forecastHTML;
            uvIndex.innerHTML = `UV Index: ${uvi} of 10`;
-        }
-
-      
+          }
 
       let fahrenheitTemperature = null;
 
