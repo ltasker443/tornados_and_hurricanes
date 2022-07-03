@@ -117,23 +117,6 @@ function currentlyIs(date) {
         navigator.geolocation.getCurrentPosition(searchLocation);
       }
       
-      function displayCelcius(event){
-        event.preventDefault();
-        let temperature = document.querySelector("#current-temp");
-        fahrenheitLink.classList.remove("active");
-        celciusLink.classList.add("active");
-        let celciusTemperature = (((fahrenheitTemperature - 32) * 5) /9);
-        temperature.innerHTML=Math.round(celciusTemperature);
-      }
-
-      function displayFahrenheit(event) {
-      event.preventDefault();  
-      celciusLink.classList.remove("active");
-      fahrenheitLink.classList.add("active");
-      let temperature = document.querySelector("#current-temp");
-      temperature.innerHTML = Math.round(fahrenheitTemperature);
-      }
-      
       function changeBackground() {
         let time = new Date();
         let hours = time.getHours();
@@ -177,8 +160,7 @@ function currentlyIs(date) {
            uvIndex.innerHTML = `UV Index: ${uvi} of 10`;
           }
 
-      let fahrenheitTemperature = null;
-
+    
       let form = document.querySelector("#city-search-form");
       form.addEventListener("submit", handleSearch);
       let searchButton = document.querySelector("#search-button");
@@ -190,11 +172,6 @@ function currentlyIs(date) {
       let rightNowDate = document.querySelector("#current-date");
       rightNowDate.innerHTML = currentlyIs(todayIs);
 
-      let celciusLink=document.querySelector("#celcius");
-      celciusLink.addEventListener("click", displayCelcius);
-
-      let fahrenheitLink=document.querySelector("#fahrenheit");
-      fahrenheitLink.addEventListener("click", displayFahrenheit);
 
       searchCity("Las Vegas");
       changeBackground();
