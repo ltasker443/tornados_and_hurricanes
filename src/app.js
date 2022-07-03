@@ -51,13 +51,12 @@ function currentlyIs(date) {
         axios.get(apiUrl).then(displayForecast);
       }
 
-  
       function currentConditions(response) {
         document.querySelector("#city").innerHTML=response.data.name;
 
         let temperature = Math.round(response.data.main.temp);
         let cityTemperature=document.querySelector("#current-temp");
-        cityTemperature.innerHTML=`${temperature}`;
+        cityTemperature.innerHTML=`${temperature}ºF`;
 
         let minimum = Math.round(response.data.main.temp_min);
         let cityMinTemp=document.querySelector("#low-temp");

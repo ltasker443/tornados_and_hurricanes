@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   
-  <body class="body-background">
+  <body>
     <div class="container">
       <form class="d-flex" role="search" id="city-search-form">
         <input
@@ -60,22 +60,17 @@
     <div class="card">
       <div class="card-body weather">
         <div class="row">
-          <span class = "col-sm-1"></span>
-          <span class="col-5">
+          <div class = "col-1"></div>
+          <div class = "col-5">
             <ul class="card-subtitle mb-2 text-muted" id="conditions">
-              <li class="city card-title" id="city"></li>
-              <li>
-                <img src="" id="condition-icon" />
+              <li id="city"></li>
+              <li id="current-temp"></li>
+              <img src="" id="condition-icon"/>
                 <span id="condition-description"></span>
-                <span id="current-temp"></span>
-                <span class="units"
-                  ><a id="fahrenheit"a>ºF</a> 
-              </li>
               <li id="refresh-time"></li>
-              <li id="alerts"></li>
             </ul>
-          </span>
-          
+          </div> 
+         
           <span class="col-5">
             <ul class="card-subtitle mb-2 text-muted" id="conditions">
               <li id="current-date"></li>
@@ -87,7 +82,7 @@
               <li id ="uv-index"></li>
             </ul>
           </span>
-          <span class = "col-sm-1"></span>
+          <span class = "col-1"></span>
         </div>
 
         <div id="forecast"></div>
