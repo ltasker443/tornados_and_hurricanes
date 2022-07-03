@@ -133,7 +133,6 @@ function currentlyIs(date) {
         }
 
       function displayForecast(response) {
-          console.log(response.data)
           let dailyForecast = response.data.daily;
           let forecast = document.querySelector("#forecast");
           let uvi = Math.round(response.data.current.uvi);
