@@ -147,7 +147,7 @@ function currentlyIs(date) {
                   <div>${formatForecastDay(forecastDay.dt)}</div>
                   <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png" />
                   <div class="low-high"></div>
-                  <span id="#min">${Math.round(forecastDay.temp.min)}º</span> <span id="max"> ${Math.round(forecastDay.temp.max)}º</span>
+                  <span id="#max">${Math.round(forecastDay.temp.max)}º</span> <span id="min"> ${Math.round(forecastDay.temp.min)}º</span>
                   </div>
                   </span>
               </div>`;
